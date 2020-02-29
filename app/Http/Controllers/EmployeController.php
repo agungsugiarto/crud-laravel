@@ -6,8 +6,6 @@ use App\Company;
 use App\Employe;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
-use Symfony\Component\Console\Input\Input;
-
 class EmployeController extends Controller
 {
      /**

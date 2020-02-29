@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Company;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\File;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Validator;
 
@@ -107,7 +106,7 @@ class CompanyController extends Controller
         $validator = Validator::make($request->all(), [
             'name' => 'required',
             'email' => 'required',
-            'logo' => 'require|image|mimes:jpeg,png,jpg|max:2048',
+            'logo' => 'required|image|mimes:jpeg,png,jpg|max:2048',
         ]);
 
         if ($validator->fails()) {
