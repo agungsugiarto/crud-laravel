@@ -49,9 +49,10 @@ class CompanyController extends Controller
     {
         // dd($request->all());
         $validator = Validator::make($request->all(), [
-            'name' => 'required',
-            'email' => 'required|unique:company',
-            'logo' => 'required|image|mimes:jpeg,png,jpg|max:2048',
+            'name'    => 'required',
+            'email'   => 'required|unique:company',
+            'website' => 'required',
+            'logo'    => 'required|image|dimensions:min_width=100,min_height=100|mimes:png|max:2048',
         ]);
 
         if ($validator->fails()) {
@@ -63,9 +64,10 @@ class CompanyController extends Controller
             $logo->storeAs('public', $name);
 
             Company::create([
-                'name'  => $request->name,
-                'email' => $request->email,
-                'logo'  => $name,
+                'name'    => $request->name,
+                'email'   => $request->email,
+                'website' => $request->website,
+                'logo'    => $name,
             ]);
         }
 
@@ -104,9 +106,10 @@ class CompanyController extends Controller
     public function update(Request $request, $id)
     {
         $validator = Validator::make($request->all(), [
-            'name' => 'required',
-            'email' => 'required',
-            'logo' => 'required|image|mimes:jpeg,png,jpg|max:2048',
+            'name'    => 'required',
+            'email'   => 'required',
+            'website' => 'required',
+            'logo'    => 'required|image|mimes:jpeg,png,jpg|max:2048',
         ]);
 
         if ($validator->fails()) {
@@ -118,9 +121,10 @@ class CompanyController extends Controller
             $logo->storeAs('public', $name);
 
             Company::findOrFail($id)->update([
-                'name'  => $request->name,
-                'email' => $request->email,
-                'logo'  => $name,
+                'name'    => $request->name,
+                'email'   => $request->email,
+                'website' => $request->website,
+                'logo'    => $name,
             ]);
         } 
 

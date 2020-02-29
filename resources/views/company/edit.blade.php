@@ -26,6 +26,14 @@
                             @enderror
                         </div>
                         <div class="form-group">
+                            <label class="col-form-label">Website</label>
+                            <input type="text" name="website" value="{{ $company->website }}" class="form-control @error('website') is-invalid @enderror">
+                            <p class="text-danger"></p>
+                            @error('website')
+                                <p class="text-danger">{{ $message }}</p>
+                            @enderror
+                        </div>
+                        <div class="form-group">
                             <label class="col-form-label">Logo</label>
                             <div class="input-group">
                                 <label class="custom-file-label">Choose file</label>

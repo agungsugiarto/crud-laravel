@@ -19,7 +19,7 @@ class Company extends Model
      *
      * @var string
      */
-    protected $fillable = ['name', 'email', 'logo'];
+    protected $fillable = ['name', 'website', 'email', 'logo'];
 
     /**
      * Method One To Many company -> employe

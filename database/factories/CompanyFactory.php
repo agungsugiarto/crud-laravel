@@ -9,6 +9,7 @@ $factory->define(Company::class, function (Faker $faker) {
     return [
         'name' => $faker->company,
         'email' => $faker->unique()->safeEmail,
+        'website' => $faker->domainName,
         'logo' => 'default.png',
     ];
 });
