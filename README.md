@@ -43,6 +43,12 @@ Laravel Simple CRUD. demo provides basic CRUD web application in Laravel.
 ```
 
 ## Demo on [Heroku](https://transisi-laravel.herokuapp.com/)
+```
+  email: admin@transisi.id
+  password: password
+
+  you can also create user.
+```
 
 But sad news the heroku is limitation with `php artisan storage:link`.
 
